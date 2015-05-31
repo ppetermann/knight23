@@ -43,12 +43,12 @@ class ListCommands extends BaseCommand implements CommandInterface
         $this->output->writeln($this->banner->getBanner());
 
         $this->output->writeln(
-            Colors::FONT_BOLD . " Available Commands:"
+            Colors::FONT_BOLD." Available Commands:"
         );
         /** @var CommandInterface $command */
-        foreach($this->knight->getCommands() as $command)
+        foreach ($this->knight->getCommands() as $command)
         {
-            $this->output->writeln("    " . $command->getHelp());
+            $this->output->writeln("    ".$command->getHelp());
         }
     }
 }

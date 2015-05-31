@@ -10,7 +10,7 @@ class Knight23 implements RunnerInterface
     /**
      * the version of this Knight23 Package
      */
-    const VERSION ="0.0.0";
+    const VERSION = "0.0.0";
 
     /**
      * @var CommandInterface[]
@@ -61,9 +61,9 @@ class Knight23 implements RunnerInterface
 
         /** @var CommandInterface $command */
         foreach ($this->commands as $command) {
-            if($command->getShort() == $run)
+            if ($command->getShort() == $run)
             {
-                $command->run([],[]);
+                $command->run([], []);
             }
         }
 

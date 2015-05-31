@@ -16,7 +16,7 @@ class SimpleTextWriter implements WriterInterface
      */
     public function writeln($line)
     {
-        $this->write($line . PHP_EOL);
+        $this->write($line.PHP_EOL);
     }
 
     /**
