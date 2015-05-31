@@ -28,6 +28,9 @@
 namespace Knight23\Core\Output;
 
 final class Colors {
+
+    const RESET = "\033[0m";
+
     const FONT_BOLD = "\033[1m";
     const FONT_UNDERLINE = "\033[4m";
     const FONT_BLINK = "\033[5m";

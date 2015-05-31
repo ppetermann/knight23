@@ -1,5 +1,5 @@
 <?php
-$container = new \King23\DI\DependencyInjector();
+$container = new \King23\DI\DependencyContainer();
 
 // the output writer
 $container->register(
@@ -16,6 +16,21 @@ $container->register(
     \React\EventLoop\LoopInterface::class,
     function () {
         return \React\EventLoop\Factory::create();
+    }
+);
+
+// register a banner class - allows easy override for own banners
+$container->register(\Knight23\Core\BannerInterface::class, function() use ($container) {
+    return $container->getInstanceOf(\Knight23\Core\Banner::class);
+});
+
+
+// register the main application itself
+$container->register(
+    \Knight23\Core\RunnerInterface::class,
+    function () use ($container) {
+        // instance for the class
+        return $container->getInstanceOf(\Knight23\Core\Knight23::class);
     }
 );
 

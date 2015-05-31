@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.5.0",
         "king23/di": "*",
-        "react/react": "~0.1.0"
+        "react/react": "~0.4.2"
     },
 
     "require-dev": {
