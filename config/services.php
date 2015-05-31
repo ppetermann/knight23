@@ -4,7 +4,7 @@ $container = new \King23\DI\DependencyContainer();
 // the output writer
 $container->register(
     \Knight23\Core\Output\WriterInterface::class,
-    function () {
+    function() {
         return new \Knight23\Core\Output\SimpleTextWriter();
     }
 );
@@ -14,7 +14,7 @@ $container->register(
 // php enabled systems
 $container->register(
     \React\EventLoop\LoopInterface::class,
-    function () {
+    function() {
         return \React\EventLoop\Factory::create();
     }
 );
@@ -29,7 +29,7 @@ $container->register(
 // register the main application itself
 $container->register(
     \Knight23\Core\RunnerInterface::class,
-    function () use ($container) {
+    function() use ($container) {
         // instance for the class
         return $container->getInstanceOf(\Knight23\Core\Knight23::class);
     }
