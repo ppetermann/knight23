@@ -24,5 +24,6 @@
         "psr-4": {
             "Knight23\\Core\\": "src/"
         }
-    }
+    },
+    "bin": ["bin/knight23"]
 }

@@ -35,7 +35,6 @@ class Knight23 implements RunnerInterface
         ContainerInterface $container
     ) {
         $this->loop = $loop;
-
         $this->container = $container;
     }
 
@@ -55,6 +54,7 @@ class Knight23 implements RunnerInterface
      */
     public function run()
     {
+        $this->addDefaultCommands();
         // @todo place command parser here
         $run = "help:list";
 
@@ -74,5 +74,10 @@ class Knight23 implements RunnerInterface
     public function getCommands()
     {
         return $this->commands;
+    }
+
+    private function addDefaultCommands()
+    {
+        $this->addCommand(\Knight23\Core\Command\ListCommands::class);
     }
 }
