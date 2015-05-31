@@ -20,6 +20,11 @@ class ListCommands extends BaseCommand implements CommandInterface
     protected $knight;
 
     /**
+     * @var BannerInterface
+     */
+    protected $banner;
+
+    /**
      * @param WriterInterface $output
      * @param RunnerInterface $knight
      * @param BannerInterface $banner
