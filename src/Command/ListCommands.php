@@ -1,7 +1,7 @@
 <?php
 namespace Knight23\Core\Command;
 
-use Knight23\Core\BannerInterface;
+use Knight23\Core\Banner\BannerInterface;
 use Knight23\Core\Output\Colors;
 use Knight23\Core\Output\WriterInterface;
 use Knight23\Core\RunnerInterface;

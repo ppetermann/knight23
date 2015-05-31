@@ -1,6 +1,7 @@
 <?php
-namespace Knight23\Core;
+namespace Knight23\Core\Banner;
 
+use Knight23\Core\Knight23;
 use Knight23\Core\Output\Colors;
 
 class Banner implements BannerInterface

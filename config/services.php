@@ -20,8 +20,9 @@ $container->register(
 );
 
 // register a banner class - allows easy override for own banners
-$container->register(\Knight23\Core\BannerInterface::class, function() use ($container) {
-    return $container->getInstanceOf(\Knight23\Core\Banner::class);
+$container->register(
+    \Knight23\Core\Banner\BannerInterface::class, function() use ($container) {
+    return $container->getInstanceOf(\Knight23\Core\Banner\Banner::class);
 });
 
 

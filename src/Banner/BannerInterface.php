@@ -1,5 +1,6 @@
 <?php
-namespace Knight23\Core;
+namespace Knight23\Core\Banner;
+
 interface BannerInterface
 {
     /**
