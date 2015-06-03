@@ -25,7 +25,7 @@
  OTHER DEALINGS IN THE SOFTWARE.
 
 */
-namespace Knight23\Core\Output;
+namespace Knight23\Core\Colors;
 
 final class Colors {
 

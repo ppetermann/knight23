@@ -61,7 +61,7 @@ class Knight23 implements RunnerInterface
 
         /** @var CommandInterface $command */
         foreach ($this->commands as $command) {
-            if ($command->getShort() == $run)
+            if ($command->getName() == $run)
             {
                 $command->run([], []);
             }

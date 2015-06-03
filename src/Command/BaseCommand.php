@@ -1,11 +1,13 @@
 <?php
 namespace Knight23\Core\Command;
 
-use Knight23\Core\Output\Colors;
+use Knight23\Core\Colors\Colors;
 
 abstract class BaseCommand implements CommandInterface
 {
-    protected $name;
+    protected $name="";
+    protected $short="";
+
     protected $options = [];
     protected $arguments = [];
 
@@ -24,14 +26,24 @@ abstract class BaseCommand implements CommandInterface
         $this->arguments[] = ['name' => $argumentName, 'default' => $default, 'help' => ""];
     }
 
-    public function getShort()
+    public function getName()
     {
         return $this->name;
     }
 
+    public function getShort()
+    {
+        return $this->short;
+    }
+
+    public function setShort($short)
+    {
+        $this->short = $short;
+    }
+
     public function getHelp()
     {
-        $help = Colors::COLOR_FG_LIGHTGRAY.$this->name.Colors::RESET;
+        $help = "";
         if (count($this->options) > 0) {
             $help .= "\n        ".Colors::FONT_BOLD."Options:".Colors::RESET."\n";
             foreach ($this->options as $option) {

@@ -2,7 +2,7 @@
 namespace Knight23\Core\Banner;
 
 use Knight23\Core\Knight23;
-use Knight23\Core\Output\Colors;
+use Knight23\Core\Colors\Colors;
 
 class Banner implements BannerInterface
 {
