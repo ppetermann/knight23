@@ -11,6 +11,9 @@ abstract class BaseCommand implements CommandInterface
     protected $options = [];
     protected $arguments = [];
 
+    /**
+     * @param string $name
+     */
     protected function setName($name)
     {
         $this->name = $name;
@@ -36,6 +39,9 @@ abstract class BaseCommand implements CommandInterface
         return $this->short;
     }
 
+    /**
+     * @param string $short
+     */
     public function setShort($short)
     {
         $this->short = $short;
