@@ -6,7 +6,7 @@ use Knight23\Core\Colors\SimpleReplaceThemeInterface;
 class ColoredTextWriter extends SimpleTextWriter implements WriterInterface
 {
     /**
-     * @var \Knight23\Core\Colors\SimpleReplaceThemeInterface
+     * @var array
      */
     private $theme =[];
 
