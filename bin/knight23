@@ -11,4 +11,4 @@ $knight23 = $container->getInstanceOf(\Knight23\Core\RunnerInterface::class);
 // you should do that between getting the instance and the run, example:
 // $knight23->addCommand(\Knight23\Core\Command\ListCommands::class);
 
-$knight23->run();
+$knight23->run($argc, $argv);

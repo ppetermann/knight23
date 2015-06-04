@@ -31,7 +31,7 @@ class ListCommands extends BaseCommand implements CommandInterface
      */
     public function __construct(WriterInterface $output, RunnerInterface $knight, BannerInterface $banner)
     {
-        $this->setName('help:list');
+        $this->setName('list');
         $this->setShort('without param: show this help, with param: show help of command param');
 
         $this->output = $output;

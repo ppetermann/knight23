@@ -14,7 +14,8 @@ interface RunnerInterface
     public function getCommands();
 
     /**
-     * @return void
+     * @param int $argc
+     * @param string[] $argv
      */
-    public function run();
+    public function run($argc, $argv);
 }

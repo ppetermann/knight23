@@ -52,19 +52,37 @@ class Knight23 implements RunnerInterface
     /**
      * execute the actuall run
      */
-    public function run()
+    public function run($argc, $argv)
     {
         $this->addDefaultCommands();
-        // @todo place command parser here
-        $run = "help:list";
 
+        // @todo place better command parser here
+        if ($argc == 1) {
+            $run = $this->getDefaultCommand();
+            $argv = [];
+        } else {
+            $run = $argv[1];
+            $argv = array_slice($argv, 2);
+        }
+
+
+        $found = false;
 
         /** @var CommandInterface $command */
         foreach ($this->commands as $command) {
+            // @todo prevent multiple commands having the same name (why?)
             if ($command->getName() == $run)
             {
-                $command->run([], []);
+                $command->run([], $argv);
+                $found = true;
             }
+        }
+
+        // @todo more gracefull end
+        if (!$found) {
+            echo "command unknown\n";
+            // exit with error
+            exit(1);
         }
 
         // stuff
@@ -76,8 +94,13 @@ class Knight23 implements RunnerInterface
         return $this->commands;
     }
 
-    private function addDefaultCommands()
+    protected function addDefaultCommands()
     {
         $this->addCommand(\Knight23\Core\Command\ListCommands::class);
+    }
+
+    protected function getDefaultCommand()
+    {
+        return "list";
     }
 }
