@@ -2,11 +2,10 @@
 namespace Knight23\Core\Command;
 
 use Knight23\Core\Banner\BannerInterface;
-use Knight23\Core\Colors\Colors;
 use Knight23\Core\Output\WriterInterface;
 use Knight23\Core\RunnerInterface;
 
-class ListCommands extends BaseCommand implements CommandInterface
+class HelpCommand extends BaseCommand implements CommandInterface
 {
 
     /**
@@ -31,8 +30,9 @@ class ListCommands extends BaseCommand implements CommandInterface
      */
     public function __construct(WriterInterface $output, RunnerInterface $knight, BannerInterface $banner)
     {
-        $this->setName('list');
-        $this->setShort('without param: show this list of commands');
+        $this->setName('help');
+        $this->setShort('display help for a command');
+        $this->addArgument('command', null, 'the command for which to display help');
 
         $this->output = $output;
         $this->knight = $knight;
@@ -43,11 +43,19 @@ class ListCommands extends BaseCommand implements CommandInterface
     {
         $this->output->writeln($this->banner->getBanner());
 
-        $this->output->writeln("<header>Available Commands:</header>");
-        /** @var CommandInterface $command */
+        if (count($arguments) < 1) {
+            $this->output->writeln('<error>no argument, did you mean to run <highlight>list</highlight><error> instead?</error>');
+            exit(1);
+        }
+
         foreach ($this->knight->getCommands() as $command)
         {
-            $this->output->writeln("    <highlight>".$command->getName() . "</highlight>\t " . $command->getShort());
+            if($command->getName() == $arguments[0]) {
+                $this->output->writeln('<highlight>' . $command->getName() .'</highlight> - ' . $command->getShort());
+                $this->output->write($command->getHelp());
+                break;
+            }
         }
+        exit(0);
     }
 }

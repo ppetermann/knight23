@@ -5,8 +5,8 @@ use Knight23\Core\Colors\Colors;
 
 abstract class BaseCommand implements CommandInterface
 {
-    protected $name="";
-    protected $short="";
+    protected $name = "";
+    protected $short = "";
 
     protected $options = [];
     protected $arguments = [];
@@ -19,14 +19,14 @@ abstract class BaseCommand implements CommandInterface
         $this->name = $name;
     }
 
-    protected function addOption($optionName, $default)
+    protected function addOption($optionName, $default, $help = "")
     {
-        $this->options[] = ['name' => $optionName, 'default' => $default, 'help' => ""];
+        $this->options[] = ['name' => $optionName, 'default' => $default, 'help' => $help];
     }
 
-    protected function addArgument($argumentName, $default)
+    protected function addArgument($argumentName, $default, $help = "")
     {
-        $this->arguments[] = ['name' => $argumentName, 'default' => $default, 'help' => ""];
+        $this->arguments[] = ['name' => $argumentName, 'default' => $default, 'help' => $help];
     }
 
     public function getName()
@@ -61,10 +61,11 @@ abstract class BaseCommand implements CommandInterface
         if (count($this->arguments) > 0) {
             $help .= "\n        ".Colors::FONT_BOLD."Arguments:".Colors::RESET."\n";
             foreach ($this->arguments as $argument) {
-                $help .= "          ".$argument['name']
+                $help .= "          ".$argument['name']."\t"
                     .Colors::COLOR_FG_LIGHTGRAY.$argument['help'].Colors::RESET." \n";
             }
         }
+
         return $help;
     }
 

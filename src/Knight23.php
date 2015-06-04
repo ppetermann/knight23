@@ -97,6 +97,7 @@ class Knight23 implements RunnerInterface
     protected function addDefaultCommands()
     {
         $this->addCommand(\Knight23\Core\Command\ListCommands::class);
+        $this->addCommand(\Knight23\Core\Command\HelpCommand::class);
     }
 
     protected function getDefaultCommand()
