@@ -85,7 +85,7 @@ class Knight23 implements RunnerInterface
             exit(1);
         }
 
-        // stuff
+        // this is running the react event loop, maybe this should run the actual commands too?
         $this->loop->run();
     }
 
