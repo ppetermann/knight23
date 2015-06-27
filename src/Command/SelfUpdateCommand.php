@@ -41,6 +41,7 @@ class SelfUpdateCommand extends BaseCommand
     /**
      * @param array $options
      * @param array $arguments
+     * @return void
      */
     public function run(array $options, array $arguments)
     {

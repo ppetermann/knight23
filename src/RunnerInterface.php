@@ -16,6 +16,7 @@ interface RunnerInterface
     /**
      * @param int $argc
      * @param string[] $argv
+     * @return void|int
      */
     public function run($argc, $argv);
 

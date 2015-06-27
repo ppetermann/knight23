@@ -5,10 +5,24 @@ use Knight23\Core\Colors\Colors;
 
 abstract class BaseCommand implements CommandInterface
 {
+    /**
+     * @var string
+     */
     protected $name = "";
+
+    /**
+     * @var string
+     */
     protected $short = "";
 
+    /**
+     * @var array
+     */
     protected $options = [];
+
+    /**
+     * @var array
+     */
     protected $arguments = [];
 
     /**
@@ -19,21 +33,37 @@ abstract class BaseCommand implements CommandInterface
         $this->name = $name;
     }
 
+    /**
+     * @param string $optionName
+     * @param string $default
+     * @param string $help
+     */
     protected function addOption($optionName, $default, $help = "")
     {
         $this->options[] = ['name' => $optionName, 'default' => $default, 'help' => $help];
     }
 
+    /**
+     * @param string $argumentName
+     * @param string $default
+     * @param string $help
+     */
     protected function addArgument($argumentName, $default, $help = "")
     {
         $this->arguments[] = ['name' => $argumentName, 'default' => $default, 'help' => $help];
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return $this->name;
     }
 
+    /**
+     * @return string
+     */
     public function getShort()
     {
         return $this->short;
@@ -47,6 +77,9 @@ abstract class BaseCommand implements CommandInterface
         $this->short = $short;
     }
 
+    /**
+     * @return string
+     */
     public function getHelp()
     {
         $help = "";
@@ -69,5 +102,10 @@ abstract class BaseCommand implements CommandInterface
         return $help;
     }
 
+    /**
+     * @param array $options
+     * @param array $arguments
+     * @return mixed
+     */
     abstract public function run(array $options, array $arguments);
 }
