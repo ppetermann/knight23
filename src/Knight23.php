@@ -11,12 +11,18 @@ class Knight23 implements RunnerInterface
      * the version of this Knight23 Package
      */
     const VERSION = "0.0.0";
-
+    /**
+     * @var string
+     */
+    protected $version;
+    /**
+     * @var string
+     */
+    protected $package;
     /**
      * @var CommandInterface[]
      */
     protected $commands = [];
-
     /**
      * @var LoopInterface
      */
@@ -36,18 +42,19 @@ class Knight23 implements RunnerInterface
     ) {
         $this->loop = $loop;
         $this->container = $container;
+
+        // set defaults
+        $this->package = "knight23/knight23";
+        $this->version = self::VERSION;
     }
 
     /**
-     * add a command
-     * @var string $command command::class
+     * @param string $package
      */
-    public function addCommand($command)
+    public function setPackage($package)
     {
-        $this->commands[] = $this->container->getInstanceOf($command);
+        $this->package = $package;
     }
-
-
 
     /**
      * execute the actuall run
@@ -65,14 +72,12 @@ class Knight23 implements RunnerInterface
             $argv = array_slice($argv, 2);
         }
 
-
         $found = false;
 
         /** @var CommandInterface $command */
         foreach ($this->commands as $command) {
             // @todo prevent multiple commands having the same name (why?)
-            if ($command->getName() == $run)
-            {
+            if ($command->getName() == $run) {
                 $command->run([], $argv);
                 $found = true;
             }
@@ -89,19 +94,67 @@ class Knight23 implements RunnerInterface
         $this->loop->run();
     }
 
-    public function getCommands()
-    {
-        return $this->commands;
-    }
-
     protected function addDefaultCommands()
     {
         $this->addCommand(\Knight23\Core\Command\ListCommands::class);
         $this->addCommand(\Knight23\Core\Command\HelpCommand::class);
     }
 
+    /**
+     * add a command
+     *
+     * @var string $command command::class
+     */
+    public function addCommand($command)
+    {
+        $this->commands[] = $this->container->getInstanceOf($command);
+    }
+
+    /**
+     * @return string
+     */
     protected function getDefaultCommand()
     {
         return "list";
+    }
+
+    /**
+     * @return Command\CommandInterface[]
+     */
+    public function getCommands()
+    {
+        return $this->commands;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * @param string $version
+     */
+    public function setVersion($version)
+    {
+        $this->version = $version;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPharName()
+    {
+        return explode("/", $this->getPackageName())[1].'.phar';
+    }
+
+    /**
+     * @return string
+     */
+    public function getPackageName()
+    {
+        return $this->package;
     }
 }

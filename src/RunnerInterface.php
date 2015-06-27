@@ -18,4 +18,19 @@ interface RunnerInterface
      * @param string[] $argv
      */
     public function run($argc, $argv);
+
+    /**
+     * @return string
+     */
+    public function getPackageName();
+
+    /**
+     * @return string
+     */
+    public function getVersion();
+
+    /**
+     * @return string
+     */
+    public function getPharName();
 }
