@@ -39,6 +39,11 @@ class HelpCommand extends BaseCommand implements CommandInterface
         $this->banner = $banner;
     }
 
+    /**
+     * @param array $options
+     * @param array $arguments
+     * @return int|void
+     */
     public function run(array $options, array $arguments)
     {
         $this->output->writeln($this->banner->getBanner());
