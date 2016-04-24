@@ -83,7 +83,7 @@ class Knight23 implements RunnerInterface
             }
         }
 
-        // @todo more gracefull end
+        // @todo more graceful end
         if (!$found) {
             echo "command unknown\n";
             // exit with error

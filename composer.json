@@ -13,13 +13,14 @@
     "require": {
         "php": ">=5.5.0",
         "king23/di": "~1.0",
-        "react/react": "~0.4.2"
+        "react/react": "~0.4"
     },
-
     "require-dev": {
-        "phpunit/phpunit": "~4.6.9"
+        "phpunit/phpunit": "~5.3"
     },
-
+    "suggest": {
+        "padraic/phar-updater": "version 1.0 should allow you to use ethe self-update command in your tools"
+    },
     "autoload": {
         "psr-4": {
             "Knight23\\Core\\": "src/"
