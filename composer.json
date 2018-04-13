@@ -11,9 +11,9 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0",
+        "php": "~7.0",
         "king23/di": "~1.0",
-        "react/react": "~0.4"
+        "react/event-loop": "~0.5"
     },
     "require-dev": {
         "phpunit/phpunit": "~5.3"
