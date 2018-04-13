@@ -2,5 +2,9 @@
 VERSION 0  INITIAL TAGGED VERSION
 =================================
 
+   Version 0.2 - modern dependencies
+      13/04/2018 19:36  0.2.0  initial release
+         5d19aaa fix dependencies
+
    Version 0.1 - initial tagged version
       24/04/2016 14:54  0.1.0  initial release
