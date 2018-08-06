@@ -3,6 +3,8 @@ VERSION 0  INITIAL TAGGED VERSION
 =================================
 
    Version 0.2 - modern dependencies
+      06/08/2018 14:50  0.2.1  react 1.0
+         0a8ad2a dependency update
       13/04/2018 19:36  0.2.0  initial release
          5d19aaa fix dependencies
 
