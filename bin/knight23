@@ -5,7 +5,7 @@ require_once __DIR__ ."/../vendor/autoload.php";
 $container = require_once __DIR__ ."/../config/services.php";
 
 /** @var \Knight23\Core\Knight23 $knight23 */
-$knight23 = $container->getInstanceOf(\Knight23\Core\RunnerInterface::class);
+$knight23 = $container->get(\Knight23\Core\RunnerInterface::class);
 
 // knight23s default tasks are added within the Runner, if you build your own script,
 // you should do that between getting the instance and the run, example:

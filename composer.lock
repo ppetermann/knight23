@@ -4,24 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "421d49c3f5296f8295d15797e3705905",
+    "content-hash": "f8fe4764f6e24ca066a0c39c1ab95f44",
     "packages": [
         {
             "name": "king23/di",
-            "version": "1.1.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ppetermann/king23-di.git",
-                "reference": "95c6505de71eb7701a6e1dd8a42829c7ddc3fcd8"
+                "reference": "9c80c33650ef34b97b57ea9938b1a3cb303b0ac4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ppetermann/king23-di/zipball/95c6505de71eb7701a6e1dd8a42829c7ddc3fcd8",
-                "reference": "95c6505de71eb7701a6e1dd8a42829c7ddc3fcd8",
+                "url": "https://api.github.com/repos/ppetermann/king23-di/zipball/9c80c33650ef34b97b57ea9938b1a3cb303b0ac4",
+                "reference": "9c80c33650ef34b97b57ea9938b1a3cb303b0ac4",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0"
+                "php": ">=5.5.0",
+                "psr/container": "~1.0"
+            },
+            "provide": {
+                "psr/container-implementation": "1.0.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.6.9"
@@ -43,7 +47,56 @@
                 }
             ],
             "description": "king23 dependency injector",
-            "time": "2017-04-25T09:47:44+00:00"
+            "time": "2018-08-25T16:24:46+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "react/event-loop",
@@ -1306,25 +1359,28 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.8.0",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "7cc359f1b7b80fc25ed7796be7d96adc9b354bae"
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/7cc359f1b7b80fc25ed7796be7d96adc9b354bae",
-                "reference": "7cc359f1b7b80fc25ed7796be7d96adc9b354bae",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e3d826245268269cd66f8326bd8bc066687b4a19",
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -1357,7 +1413,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2018-04-30T19:57:29+00:00"
+            "time": "2018-08-06T14:22:27+00:00"
         },
         {
             "name": "symfony/yaml",

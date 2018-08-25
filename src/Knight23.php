@@ -107,7 +107,7 @@ class Knight23 implements RunnerInterface
      */
     public function addCommand($command)
     {
-        $this->commands[] = $this->container->getInstanceOf($command);
+        $this->commands[] = $this->container->get($command);
     }
 
     /**

@@ -12,14 +12,11 @@
     ],
     "require": {
         "php": "~7.0",
-        "king23/di": "~1.0",
+        "king23/di": "~2.0",
         "react/event-loop": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~5.3"
-    },
-    "suggest": {
-        "padraic/phar-updater": "version 1.0 should allow you to use ethe self-update command in your tools"
     },
     "autoload": {
         "psr-4": {
