@@ -2,6 +2,10 @@
 VERSION 0  INITIAL TAGGED VERSION
 =================================
 
+   Version 0.3 - update to king23/di 2.0
+      25/08/2018 22:34  0.3.0  initial release
+         031ea47 update to king23/di 2.0
+
    Version 0.2 - modern dependencies
       06/08/2018 14:50  0.2.1  react 1.0
          0a8ad2a dependency update
