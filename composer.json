@@ -13,10 +13,9 @@
     "require": {
         "php": ">=7",
         "king23/di": "~2.0",
-        "react/event-loop": "~1.0"
+        "react/event-loop": "~1.5"
     },
     "require-dev": {
-        "phpunit/phpunit": "~8"
     },
     "autoload": {
         "psr-4": {
